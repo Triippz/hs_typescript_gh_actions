@@ -1,5 +1,4 @@
 name: Deploy to HubSpot Portal
-description: Deploy to HubSpot Portal
 
 on:
   push:
