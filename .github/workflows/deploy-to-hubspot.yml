@@ -21,12 +21,9 @@ jobs:
         run: npm run build
       - name: HubSpot Project Upload Action
         uses: HubSpot/hubspot-project-upload-action@v1.0
-        with:
-          portalId: ${{ secrets.hubspot_portal_id }}
-          personal_access_key: ${{ secrets.hubspot_personal_access_key }}
         env:
-          HUBSPOT_PORTAL_ID: ${{ inputs.account_id }}
-          HUBSPOT_PERSONAL_ACCESS_KEY: ${{ inputs.personal_access_key }}
+          HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
+          HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
         run: |
           cd dist && hs project upload --forceCreate --use-env
 
