@@ -23,6 +23,6 @@ jobs:
         env:
           HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
           HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
-        run: npm run deploy
+        run: npm run upload
 
 
