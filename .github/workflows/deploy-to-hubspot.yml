@@ -20,7 +20,6 @@ jobs:
       - name: Build
         run: npm run build
       - name: HubSpot Project Upload Action
-        uses: HubSpot/hubspot-project-upload-action@v1.0
         env:
           HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
           HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
