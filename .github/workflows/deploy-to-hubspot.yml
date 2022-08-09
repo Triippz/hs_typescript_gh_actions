@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  upload:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,14 +19,6 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-
-  deployment:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: HubSpot Project Upload Action
         env:
           HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.hubspot_personal_access_key }}
