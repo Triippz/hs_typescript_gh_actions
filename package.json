@@ -7,7 +7,9 @@
   "scripts": {
     "clean": "rimraf dist/",
     "copy-files": "copyfiles -u 1 project/**/*.json  dist/",
-    "build": "npm run clean && tsc && npm run copy-files"
+    "build": "npm run clean && tsc && npm run copy-files",
+    "upload": "hs project upload --forceCreate --use-env",
+    "deploy": "cd dist && npm run upload"
   },
   "devDependencies": {
     "@hubspot/cli": "^4.0.0",
