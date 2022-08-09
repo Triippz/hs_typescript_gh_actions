@@ -24,6 +24,8 @@ jobs:
           HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
           HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
         run: |
-          cd dist && npx @hubspot/cli@latest project upload --forceCreate --use-env
+          cd dist && |
+          ls -l && |
+          npx @hubspot/cli@latest project upload --forceCreate --use-env
 
 
