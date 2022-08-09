@@ -20,11 +20,10 @@ jobs:
       - name: Build
         run: npm run build
       - name: HubSpot Project Upload Action
-        env:
-          HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.hubspot_personal_access_key }}
-          HUBSPOT_PORTAL_ID: ${{ secrets.hubspot_portal_id }}
-        run: cd dist && hs project upload --forceCreate --use-env
-        shell: bash
+        uses: ./dist
+        with:
+          account_id: ${{ secrets.hubspot_account_id }}
+          personal_access_key: ${{ secrets.hubspot_personal_access_key }}
 
 
 
